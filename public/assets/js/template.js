@@ -109,13 +109,6 @@
         }
       }
     });
-    if ($.cookie('staradmin2-free-banner')!="true") {
-      document.querySelector('.navbar').classList.remove('fixed-top');
-    }
-    else {
-      document.querySelector('.navbar').classList.add('fixed-top');
-    }
-    
     if ($( ".navbar" ).hasClass( "fixed-top" )) {
       document.querySelector('.page-body-wrapper').classList.remove('pt-0');
       document.querySelector('.navbar').classList.remove('pt-5');
