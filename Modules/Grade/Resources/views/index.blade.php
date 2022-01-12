@@ -1,4 +1,4 @@
-@extends('grade::layouts.master')
+@extends('main')
 
 @section('content')
     <h1>Hello World</h1>
