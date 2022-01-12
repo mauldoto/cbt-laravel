@@ -1,4 +1,5 @@
 {
     "User": true,
-    "QuestionPack": true
+    "QuestionPack": true,
+    "Grade": true
 }
