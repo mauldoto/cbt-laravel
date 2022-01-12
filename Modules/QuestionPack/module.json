@@ -1,0 +1,13 @@
+{
+    "name": "QuestionPack",
+    "alias": "questionpack",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\QuestionPack\\Providers\\QuestionPackServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
