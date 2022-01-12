@@ -10,16 +10,16 @@
   <link rel="stylesheet" href="{{asset('assets/vendors/feather/feather.css')}}">
   <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/vendors/ti-icons/css/themify-icons.css')}}">
-  {{-- <link rel="stylesheet" href="{{asset('assets/vendors/typicons/typicons.css')}}"> --}}
+  <link rel="stylesheet" href="{{asset('assets/vendors/typicons/typicons.css')}}">
   <link rel="stylesheet" href="{{asset('assets/vendors/simple-line-icons/css/simple-line-icons.css')}}">
-  {{-- <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}"> --}}
+  <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="{{asset('assets/js/select.dataTables.min.css')}}">
+  {{-- <link rel="stylesheet" href="{{asset('assets/js/select.dataTables.min.css')}}"> --}}
   @stack('additional-plugin-css')
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{asset('assets/vendors/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/css/vertical-layout-light/style.css')}}">
   @stack('additional-css')
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
@@ -64,6 +64,8 @@
   @stack('additional-plugin-js')
   <!-- End plugin js for this page -->
   <!-- inject:js -->
+  <script src="{{asset('assets/js/off-canvas.js')}}"></script>
+  <script src="{{asset('assets/js/hoverable-collapse.js')}}"></script>
   <script src="{{asset('assets/js/template.js')}}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
