@@ -30,12 +30,21 @@
 </head>
 <body>
   <div class="container-scroller">
+    @guest
+      @yield('content')
+    @else
     <!-- partial:partials/_navbar.html -->
     @include('layouts.navbar')
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_sidebar.html -->
-      @include('layouts.sidebars.sidebar')
+      @if (Auth()->user()->user_type === 'superadmin')
+      @include('layouts.sidebars.su-sidebar')
+      @elseif (Auth()->user()->user_type === 'teacher')
+      @include('layouts.sidebars.teacher-sidebar')
+      @else
+      @include('layouts.sidebars.student-sidebar')
+      @endif
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -47,17 +56,13 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">CBT Team Sekolah Menenengah Kejuruan</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
-          </div>
-        </footer>
+        @include('layouts.footer')
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
+    @endif
   </div>
   <!-- container-scroller -->
 
@@ -68,9 +73,11 @@
   @stack('additional-plugin-js')
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="{{asset('assets/js/off-canvas.js')}}"></script>
-  <script src="{{asset('assets/js/hoverable-collapse.js')}}"></script>
-  <script src="{{asset('assets/js/template.js')}}"></script>
+@auth
+<script src="{{asset('assets/js/off-canvas.js')}}"></script>
+<script src="{{asset('assets/js/hoverable-collapse.js')}}"></script>
+<script src="{{asset('assets/js/template.js')}}"></script>
+@endauth
   <!-- endinject -->
   <!-- Custom js for this page-->
   @stack('additional-custom-js')

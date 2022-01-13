@@ -46,58 +46,6 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item {{ active_class(['/guru']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#teacher-menu" aria-expanded="false" aria-controls="teacher-menu">
-        <i class="menu-icon mdi mdi-teach"></i>
-        <span class="menu-title">Guru</span>
-        <i class="menu-arrow"></i> 
-      </a>
-      <div class="collapse {{ show_class(['guru']) }}" id="teacher-menu">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item {{ active_class(['/teacher/create']) }}"> <a class="nav-link" href="pages/ui-features/buttons.html">Create</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">List</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item {{ active_class(['/siswa']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#student-menu" aria-expanded="false" aria-controls="student-menu">
-        <i class="menu-icon mdi mdi-account-box-outline"></i>
-        <span class="menu-title">Siswa</span>
-        <i class="menu-arrow"></i> 
-      </a>
-      <div class="collapse {{ show_class(['siswa']) }}" id="student-menu">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Create</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">List</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item {{ active_class(['/kelas']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#grade-menu" aria-expanded="false" aria-controls="grade-menu">
-        <i class="menu-icon mdi mdi-google-classroom"></i>
-        <span class="menu-title">Kelas</span>
-        <i class="menu-arrow"></i> 
-      </a>
-      <div class="collapse {{ show_class(['kelas']) }}" id="grade-menu">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Create</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">List</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item {{ active_class(['/mapel']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#subject-menu" aria-expanded="false" aria-controls="subject-menu">
-        <i class="menu-icon mdi mdi-book-outline"></i>
-        <span class="menu-title">Mata Pelajaran</span>
-        <i class="menu-arrow"></i> 
-      </a>
-      <div class="collapse {{ show_class(['mapel']) }}" id="subject-menu">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Create</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">List</a></li>
-        </ul>
-      </div>
-    </li>
     <li class="nav-item nav-category">Media</li>
     <li class="nav-item {{ active_class(['media']) }}">
       <a class="nav-link" href="{{ url('/media') }}">
