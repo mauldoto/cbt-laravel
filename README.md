@@ -22,7 +22,12 @@ or
 composer install
 ```
 
-Copy and rename .env.example to .env, update the environmental variables and set an app key:
+Copy and rename .env.example to .env:
+```shell
+cp .env.example .env
+``` 
+
+update the environmental variables and set an app key:
 ```shell
 php artisan key:generate
 ```
