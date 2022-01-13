@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('questionpack')->group(function() {
+Route::prefix('bank-soal')->group(function() {
     Route::get('/', 'QuestionPackController@index');
 });

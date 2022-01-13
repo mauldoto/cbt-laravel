@@ -3,5 +3,8 @@
     "QuestionPack": true,
     "Grade": true,
     "Subject": true,
-    "Media": true
+    "Media": true,
+    "Question": true,
+    "Category": true,
+    "Examp": true
 }

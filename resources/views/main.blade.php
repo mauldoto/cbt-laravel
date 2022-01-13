@@ -4,18 +4,22 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Star Admin2 </title>
-  <!-- plugins:css -->
+	<title>{{ config('app.name', 'Laravel') }}</title>
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+	<meta name="app-url" content="{{ url('/') }}">
+  <!-- End CSRF Token -->
+  <!-- inject plugins:css -->
   <link rel="stylesheet" href="{{asset('assets/vendors/feather/feather.css')}}">
   <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/vendors/ti-icons/css/themify-icons.css')}}">
   <link rel="stylesheet" href="{{asset('assets/vendors/typicons/typicons.css')}}">
   <link rel="stylesheet" href="{{asset('assets/vendors/simple-line-icons/css/simple-line-icons.css')}}">
   <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
-  <!-- endinject -->
+  <!-- endinject plugins:css -->
   <!-- Plugin css for this page -->
-  {{-- <link rel="stylesheet" href="{{asset('assets/js/select.dataTables.min.css')}}"> --}}
   @stack('additional-plugin-css')
   <!-- End plugin css for this page -->
   <!-- inject:css -->

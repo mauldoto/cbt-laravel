@@ -1,0 +1,13 @@
+{
+    "name": "Examp",
+    "alias": "examp",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Examp\\Providers\\ExampServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

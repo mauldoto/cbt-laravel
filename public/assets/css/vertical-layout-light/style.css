@@ -21014,7 +21014,7 @@ code {
 }
 
 .accordion.accordion-filled .card .card-header a[aria-expanded="false"]:before {
-  content: "\e64b";
+  content: "\f142";
 }
 
 .accordion.accordion-filled .card .card-body {
@@ -21057,7 +21057,7 @@ code {
 }
 
 .accordion.accordion-solid-header .card .card-header a[aria-expanded="false"]:before {
-  content: "\e64b";
+  content: "\f142";
 }
 
 .accordion.accordion-solid-header .card .card-body {
@@ -21095,7 +21095,7 @@ code {
 }
 
 .accordion.accordion-solid-content .card .card-header a[aria-expanded="false"]:before {
-  content: "\e64b";
+  content: "\f142";
 }
 
 .accordion.accordion-solid-content .card .card-body {
@@ -21140,7 +21140,7 @@ code {
 }
 
 .accordion.accordion-multi-colored .card .card-header a[aria-expanded="false"]:before {
-  content: "\e64b";
+  content: "\f142";
 }
 
 /* Badges */
@@ -23611,7 +23611,7 @@ code {
   border-left: 0;
   border-bottom: 0;
   font: normal normal normal 24px/1 "themify";
-  content: "\e64b";
+  content: "\f142";
   width: auto;
   height: auto;
   vertical-align: middle;
@@ -27241,7 +27241,7 @@ body.avgrund-active {
 .dataTables_wrapper .dataTable thead .sorting_desc:before,
 .dataTables_wrapper .dataTable thead .sorting_asc_disabled:before,
 .dataTables_wrapper .dataTable thead .sorting_desc_disabled:before {
-  content: "\e64b";
+  content: "\f142";
   right: 1.2em;
   bottom: 0;
 }
@@ -27364,7 +27364,7 @@ body.avgrund-active {
 }
 
 .expandable-table tr td.details-control:before {
-  content: '\e64b';
+  content: '\f142';
   font-family: "themify";
 }
 
@@ -29057,7 +29057,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav .nav-item.active > .nav-link i.menu-arrow::before {
-  content: "\e64b";
+  content: "\f142";
 }
 
 .sidebar .nav .nav-item:hover > .nav-link i,
