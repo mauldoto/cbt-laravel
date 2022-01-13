@@ -15,12 +15,12 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::middleware('web:auth')->group(function() {
-    Route::get('/', [DashboardController::class, 'index']);
-    Route::post('logout', [LoginController::class, 'logout']);
+Route::middleware(['web','auth'])->group(function() {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
 
 Route::middleware('guest')->group(function() {
-    Route::get('login', [LoginController::class, 'login']);
-    Route::post('login', [LoginController::class, 'authenticate']);
+    Route::get('login', [LoginController::class, 'login'])->name('login');
+    Route::post('login', [LoginController::class, 'authenticate'])->name('auth');
 });

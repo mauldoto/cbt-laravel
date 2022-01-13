@@ -9,12 +9,11 @@ use App\Http\Requests\LoginRequest;
 
 class LoginController extends Controller
 {
-    /**
-     * Handle an authentication attempt.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function login()
+    {
+        return view('auth.login');
+    }
+    
     public function authenticate(LoginRequest $request) 
     {
         $credentials = $request->only(['username', 'password']);
