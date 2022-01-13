@@ -20,7 +20,7 @@ Route::middleware('web:auth')->group(function() {
     Route::post('logout', [LoginController::class, 'logout']);
 });
 
-Router::middleware('guest')->group(function() {
+Route::middleware('guest')->group(function() {
     Route::get('login', [LoginController::class, 'login']);
     Route::post('login', [LoginController::class, 'authenticate']);
 });
