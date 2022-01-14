@@ -7,7 +7,6 @@ if(!function_exists('active_class')) {
   }
 }
 
-
 // For checking activated route
 if(!function_exists('is_active_route')) {
 	function is_active_route($path) {
