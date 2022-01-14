@@ -8,7 +8,7 @@
     </li>
     <li class="nav-item nav-category">Menu</li>
     <li class="nav-item {{ active_class(['bank-soal']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#question-pack-menu" aria-expanded="false" aria-controls="question-pack-menu">
+      <a class="nav-link" data-bs-toggle="collapse" href="#question-pack-menu" aria-expanded="{{ is_active_route(['bank-soal']) }}" aria-controls="question-pack-menu">
         <i class="menu-icon mdi mdi-file-cabinet"></i>
         <span class="menu-title">Bank Soal</span>
         <i class="menu-arrow"></i> 
@@ -21,7 +21,7 @@
       </div>
     </li>
     <li class="nav-item {{ active_class(['kategori']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#kategori" aria-expanded="false" aria-controls="kategori">
+      <a class="nav-link" data-bs-toggle="collapse" href="#kategori" aria-expanded="{{ is_active_route(['kategori']) }}" aria-controls="kategori">
         <i class="menu-icon mdi mdi-file-document-box-multiple-outline"></i>
         <span class="menu-title">Kategori Soal</span>
         <i class="menu-arrow"></i> 
@@ -34,7 +34,7 @@
       </div>
     </li>
     <li class="nav-item {{ active_class(['soal']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#soal" aria-expanded="false" aria-controls="soal">
+      <a class="nav-link" data-bs-toggle="collapse" href="#soal" aria-expanded="{{ is_active_route(['soal']) }}" aria-controls="soal">
         <i class="menu-icon mdi mdi-format-list-numbered"></i>
         <span class="menu-title">Soal</span>
         <i class="menu-arrow"></i> 
@@ -46,8 +46,8 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item {{ active_class(['/guru']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#teacher-menu" aria-expanded="false" aria-controls="teacher-menu">
+    <li class="nav-item {{ active_class(['guru']) }}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#teacher-menu" aria-expanded="{{ is_active_route(['guru']) }}" aria-controls="teacher-menu">
         <i class="menu-icon mdi mdi-teach"></i>
         <span class="menu-title">Guru</span>
         <i class="menu-arrow"></i> 
@@ -59,8 +59,8 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item {{ active_class(['/siswa']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#student-menu" aria-expanded="false" aria-controls="student-menu">
+    <li class="nav-item {{ active_class(['siswa']) }}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#student-menu" aria-expanded="{{ is_active_route(['siswa']) }}" aria-controls="student-menu">
         <i class="menu-icon mdi mdi-account-box-outline"></i>
         <span class="menu-title">Siswa</span>
         <i class="menu-arrow"></i> 
@@ -72,8 +72,8 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item {{ active_class(['/kelas']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#grade-menu" aria-expanded="false" aria-controls="grade-menu">
+    <li class="nav-item {{ active_class(['kelas']) }}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#grade-menu" aria-expanded="{{ is_active_route(['kelas']) }}" aria-controls="grade-menu">
         <i class="menu-icon mdi mdi-google-classroom"></i>
         <span class="menu-title">Kelas</span>
         <i class="menu-arrow"></i> 
@@ -85,8 +85,8 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item {{ active_class(['/mapel']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#subject-menu" aria-expanded="false" aria-controls="subject-menu">
+    <li class="nav-item {{ active_class(['mapel']) }}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#subject-menu" aria-expanded="{{ is_active_route(['mapel']) }}" aria-controls="subject-menu">
         <i class="menu-icon mdi mdi-book-outline"></i>
         <span class="menu-title">Mata Pelajaran</span>
         <i class="menu-arrow"></i> 
