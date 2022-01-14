@@ -13,13 +13,13 @@
             <thead>
               <tr>
                 <th>
-                  First name
+                  #No
                 </th>
                 <th>
-                  Progress
+                  Kode Mapel
                 </th>
                 <th>
-                  Amount
+                  Nama Mapel
                 </th>
                 <th>
                   Actions
@@ -27,7 +27,32 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              @php
+                  $number = 0;
+              @endphp
+              @foreach ($dataSubjects as $subject)
+                  <tr>
+                    <td>{{ ++$number }}</td>
+                    <td>{{ $subject->subject_code }}</td>
+                    <td>{{ $subject->subject_name }}</td>
+                    <td>
+                      <div class="dropdown">
+                          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuIconButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="ti-menu-alt"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton1">
+                          <h6 class="dropdown-header">Settings</h6>
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item text-danger" href="#">Separated link</a>
+                          </div>
+                      </div>
+                  </td>
+                  </tr>
+              @endforeach
+              {{-- <tr>
                 <td>
                   Herman Beck
                 </td>
@@ -50,7 +75,7 @@
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item text-danger" href="#">Separated link</a>
                         </div>
                     </div>
                 </td>
@@ -78,7 +103,7 @@
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item text-danger" href="#">Separated link</a>
                         </div>
                     </div>
                 </td>
@@ -106,7 +131,7 @@
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item text-danger" href="#">Separated link</a>
                         </div>
                     </div>
                 </td>
@@ -134,7 +159,7 @@
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item text-danger" href="#">Separated link</a>
                         </div>
                     </div>
                 </td>
@@ -162,7 +187,7 @@
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item text-danger" href="#">Separated link</a>
                         </div>
                     </div>
                 </td>
@@ -190,7 +215,7 @@
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item text-danger" href="#">Separated link</a>
                         </div>
                     </div>
                 </td>
@@ -218,11 +243,11 @@
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item text-danger" href="#">Separated link</a>
                         </div>
                     </div>
                 </td>
-              </tr>
+              </tr> --}}
             </tbody>
           </table>
         </div>

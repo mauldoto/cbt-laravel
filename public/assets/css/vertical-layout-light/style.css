@@ -15320,7 +15320,6 @@ fieldset:disabled .swal2-modal .swal2-buttonswrapper .swal2-styled,
   left: 0;
   height: 30vh;
   max-height: 100%;
-  color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   transform: translateY(-100%);
 }
