@@ -8,14 +8,15 @@
       <p class="card-description">
         Form untuk menambah data mata pelajaran
       </p>
-      <form class="forms-sample">
+      <form action="{{ url('mapel/store') }}" method="POST">
+        @csrf
         <div class="form-group">
           <label for="subjectCode">Kode Mata Pelajaran</label>
-          <input type="text" class="form-control" id="subjectCode" placeholder="Kode">
+          <input type="text" class="form-control" id="subjectCode" name="subject_code" placeholder="Kode">
         </div>
         <div class="form-group">
           <label for="subjectName">Nama Mata Pelajaran</label>
-          <input type="text" class="form-control" id="subjectName" placeholder="Nama">
+          <input type="text" class="form-control" id="subjectName" name="subject_name" placeholder="Nama">
         </div>
         <button type="submit" class="btn btn-primary me-2">Submit</button>
       </form>

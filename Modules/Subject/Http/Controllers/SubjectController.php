@@ -6,6 +6,9 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
+use Modules\Subject\Http\Requests\SubjectCreateRequest;
+use App\Models\Subject;
+
 class SubjectController extends Controller
 {
     /**
@@ -14,7 +17,8 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        return view('subject::index');
+        $dataSubjects = Subject::select('subject_code', 'subject_name')->get();
+        return view('subject::index', compact('dataSubjects'));
     }
 
     /**
@@ -31,9 +35,25 @@ class SubjectController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(SubjectCreateRequest $request)
     {
-        //
+        $dataInput = $request->only(['subject_code', 'subject_name']);
+
+        if (Subject::checkCodeIsExist($request->subject_code)) {
+            return back()
+                    ->withErrors(['subject_code' => 'Kode mata pelajaran sudah digunakan, mohon gunakan kode yang lain.'])
+                    ->withInput();
+        }
+
+        
+        $createSubject = Subject::create($dataInput);
+        if (!$createSubject) {
+            return back()
+                    ->withErrors(['Proses tambah data mata pelajaran gagal, silakan ulangi kembali.'])
+                    ->withInput();
+        }
+
+        return redirect('mapel/list')->withSuccess(['Data mata pelajaran berhasil ditambahkan.']);
     }
 
     /**
