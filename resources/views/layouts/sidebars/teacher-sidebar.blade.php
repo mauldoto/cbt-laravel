@@ -16,10 +16,10 @@
       <div class="collapse {{ show_class(['/']) }}" id="question-pack-menu">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item {{ active_class(['bank-soal/list']) }}"> 
-            <a class="nav-link nav-link-sub" href="{{ url('bank-soal/list') }}">List</a>
+            <a class="nav-link nav-link-sub {{ active_class(['bank-soal/list']) }}" href="{{ url('bank-soal/list') }}">List</a>
           </li>
           <li class="nav-item {{ active_class(['bank-soal/create']) }}"> 
-            <a class="nav-link nav-link-sub" href="{{ url('bank-soal/create') }}">Create</a>
+            <a class="nav-link nav-link-sub {{ active_class(['bank-soal/create']) }}" href="{{ url('bank-soal/create') }}">Create</a>
           </li>
         </ul>
       </div>
@@ -33,10 +33,10 @@
       <div class="collapse {{ show_class(['kategori/*']) }}" id="kategori">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item {{ active_class(['kategori/list']) }}"> 
-            <a class="nav-link nav-link-sub" href="{{ url('kategori/list') }}">List</a>
+            <a class="nav-link nav-link-sub {{ active_class(['kategori/list']) }}" href="{{ url('kategori/list') }}">List</a>
           </li>
           <li class="nav-item {{ active_class(['kategori/create']) }}"> 
-            <a class="nav-link nav-link-sub" href="{{ url('kategori/create') }}">Create</a>
+            <a class="nav-link nav-link-sub {{ active_class(['kategori/create']) }}" href="{{ url('kategori/create') }}">Create</a>
           </li>
         </ul>
       </div>
@@ -50,10 +50,10 @@
       <div class="collapse {{ show_class(['soal']) }}" id="soal">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item {{ active_class(['soal/list']) }}"> 
-            <a class="nav-link nav-link-sub" href="{{ url('soal/list') }}">List</a>
+            <a class="nav-link nav-link-sub {{ active_class(['soal/list']) }}" href="{{ url('soal/list') }}">List</a>
           </li>
           <li class="nav-item {{ active_class(['soal/create']) }}"> 
-            <a class="nav-link nav-link-sub" href="{{ url('soal/create') }}">Create</a>
+            <a class="nav-link nav-link-sub {{ active_class(['soal/create']) }}" href="{{ url('soal/create') }}">Create</a>
           </li>
         </ul>
       </div>
