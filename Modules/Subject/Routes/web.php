@@ -11,6 +11,7 @@
 |
 */
 
-Route::prefix('subject')->group(function() {
+Route::prefix('mapel')->middleware(['web', 'auth'])->group(function() {
     Route::get('/', 'SubjectController@index');
+    Route::get('/create', 'SubjectController@create');
 });

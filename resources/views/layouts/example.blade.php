@@ -1,6 +1,7 @@
 @extends('main')
 
 @section('content')
-<h2>Example content</h2>
-    
+<div class="col-sm-12">
+  <h2>Example content</h2>
+</div>    
 @endsection
