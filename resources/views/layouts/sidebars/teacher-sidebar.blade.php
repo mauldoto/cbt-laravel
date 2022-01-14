@@ -7,29 +7,37 @@
       </a>
     </li>
     <li class="nav-item nav-category">Menu</li>
-    <li class="nav-item {{ active_class(['bank-soal']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#question-pack-menu" aria-expanded="{{ is_active_route(['bank-soal']) }}" aria-controls="question-pack-menu">
+    <li class="nav-item {{ active_class(['/']) }}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#question-pack-menu" aria-expanded="{{ is_active_route(['bank-soal/*']) }}" aria-controls="question-pack-menu">
         <i class="menu-icon mdi mdi-file-cabinet"></i>
         <span class="menu-title">Bank Soal</span>
         <i class="menu-arrow"></i> 
       </a>
-      <div class="collapse {{ show_class(['bank-soal']) }}" id="question-pack-menu">
+      <div class="collapse {{ show_class(['/']) }}" id="question-pack-menu">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item {{ active_class(['/bank-soal/create']) }}"> <a class="nav-link" href="pages/ui-features/buttons.html">Create</a></li>
-          <li class="nav-item {{ active_class(['/bank-soal/list']) }}"> <a class="nav-link" href="pages/ui-features/dropdowns.html">List</a></li>
+          <li class="nav-item {{ active_class(['bank-soal/list']) }}"> 
+            <a class="nav-link nav-link-sub" href="{{ url('bank-soal/list') }}">List</a>
+          </li>
+          <li class="nav-item {{ active_class(['bank-soal/create']) }}"> 
+            <a class="nav-link nav-link-sub" href="{{ url('bank-soal/create') }}">Create</a>
+          </li>
         </ul>
       </div>
     </li>
-    <li class="nav-item {{ active_class(['kategori']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#kategori" aria-expanded="{{ is_active_route(['kategori']) }}" aria-controls="kategori">
+    <li class="nav-item {{ active_class(['kategori/*']) }}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#kategori" aria-expanded="{{ is_active_route(['kategori/*']) }}" aria-controls="kategori">
         <i class="menu-icon mdi mdi-file-document-box-multiple-outline"></i>
         <span class="menu-title">Kategori Soal</span>
         <i class="menu-arrow"></i> 
       </a>
-      <div class="collapse {{ show_class(['kategori']) }}" id="kategori">
+      <div class="collapse {{ show_class(['kategori/*']) }}" id="kategori">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item {{ active_class(['/kategori/create']) }}"> <a class="nav-link" href="pages/ui-features/buttons.html">Create</a></li>
-          <li class="nav-item {{ active_class(['/kategori/list']) }}"> <a class="nav-link" href="pages/ui-features/dropdowns.html">List</a></li>
+          <li class="nav-item {{ active_class(['kategori/list']) }}"> 
+            <a class="nav-link nav-link-sub" href="{{ url('kategori/list') }}">List</a>
+          </li>
+          <li class="nav-item {{ active_class(['kategori/create']) }}"> 
+            <a class="nav-link nav-link-sub" href="{{ url('kategori/create') }}">Create</a>
+          </li>
         </ul>
       </div>
     </li>
@@ -41,13 +49,17 @@
       </a>
       <div class="collapse {{ show_class(['soal']) }}" id="soal">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item {{ active_class(['/bank-soal/create']) }}"> <a class="nav-link" href="pages/ui-features/buttons.html">Create</a></li>
-          <li class="nav-item {{ active_class(['/bank-soal/list']) }}"> <a class="nav-link" href="pages/ui-features/dropdowns.html">List</a></li>
+          <li class="nav-item {{ active_class(['soal/list']) }}"> 
+            <a class="nav-link nav-link-sub" href="{{ url('soal/list') }}">List</a>
+          </li>
+          <li class="nav-item {{ active_class(['soal/create']) }}"> 
+            <a class="nav-link nav-link-sub" href="{{ url('soal/create') }}">Create</a>
+          </li>
         </ul>
       </div>
     </li>
     <li class="nav-item nav-category">Media</li>
-    <li class="nav-item {{ active_class(['media']) }}">
+    <li class="nav-item {{ active_class(['/']) }}">
       <a class="nav-link" href="{{ url('/media') }}">
         <i class="menu-icon mdi mdi-folder-outline"></i>
         <span class="menu-title">File Manager</span>
