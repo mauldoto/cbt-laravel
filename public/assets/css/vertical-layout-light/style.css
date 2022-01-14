@@ -15320,6 +15320,7 @@ fieldset:disabled .swal2-modal .swal2-buttonswrapper .swal2-styled,
   left: 0;
   height: 30vh;
   max-height: 100%;
+  color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   transform: translateY(-100%);
 }
@@ -30749,7 +30750,7 @@ div.tagsinput span.tag a {
   .sidebar-icon-only .sidebar .nav .nav-item.nav-category {
     display: none;
   }
-  .sidebar-icon-only .sidebar .nav .nav-item.active .nav-link:before {
+  .sidebar-icon-only .sidebar .nav .nav-item.active .nav-link:not(.nav-link-sub):before {
     content: "";
     position: absolute;
     width: 3px;
