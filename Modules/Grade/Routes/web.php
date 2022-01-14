@@ -11,6 +11,7 @@
 |
 */
 
-Route::prefix('grade')->group(function() {
-    Route::get('/', 'GradeController@index');
+Route::prefix('kelas')->middleware(['web', 'auth'])->group(function() {
+    Route::get('list', 'GradeController@index');
+    Route::get('create', 'GradeController@create');
 });

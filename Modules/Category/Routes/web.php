@@ -11,6 +11,7 @@
 |
 */
 
-Route::prefix('category')->group(function() {
-    Route::get('/', 'CategoryController@index');
+Route::prefix('kategori')->middleware(['web', 'auth'])->group(function() {
+    Route::get('list', 'CategoryController@index');
+    Route::get('create', 'CategoryController@create');
 });

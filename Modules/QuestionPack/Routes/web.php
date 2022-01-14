@@ -11,6 +11,7 @@
 |
 */
 
-Route::prefix('bank-soal')->group(function() {
-    Route::get('/', 'QuestionPackController@index');
+Route::prefix('bank-soal')->middleware(['web', 'auth'])->group(function() {
+    Route::get('list', 'QuestionPackController@index');
+    Route::get('create', 'QuestionPackController@create');
 });
