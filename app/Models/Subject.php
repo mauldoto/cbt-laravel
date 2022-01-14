@@ -11,6 +11,11 @@ class Subject extends Model
 
     protected $fillable = [
         'subject_code',
-        'name'
+        'subject_name'
     ];
+
+    public static function checkCodeIsExist($code, $isUpdate = false)
+    {
+        return Self::where('subject_code', $code)->exists();
+    }
 }
