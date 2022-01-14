@@ -8,7 +8,7 @@
     </li>
     <li class="nav-item nav-category">Menu</li>
     <li class="nav-item {{ active_class(['bank-soal']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#question-pack-menu" aria-expanded="false" aria-controls="question-pack-menu">
+      <a class="nav-link" data-bs-toggle="collapse" href="#question-pack-menu" aria-expanded="{{ is_active_route(['bank-soal']) }}" aria-controls="question-pack-menu">
         <i class="menu-icon mdi mdi-file-cabinet"></i>
         <span class="menu-title">Bank Soal</span>
         <i class="menu-arrow"></i> 
@@ -21,7 +21,7 @@
       </div>
     </li>
     <li class="nav-item {{ active_class(['kategori']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#kategori" aria-expanded="false" aria-controls="kategori">
+      <a class="nav-link" data-bs-toggle="collapse" href="#kategori" aria-expanded="{{ is_active_route(['kategori']) }}" aria-controls="kategori">
         <i class="menu-icon mdi mdi-file-document-box-multiple-outline"></i>
         <span class="menu-title">Kategori Soal</span>
         <i class="menu-arrow"></i> 
@@ -34,7 +34,7 @@
       </div>
     </li>
     <li class="nav-item {{ active_class(['soal']) }}">
-      <a class="nav-link" data-bs-toggle="collapse" href="#soal" aria-expanded="false" aria-controls="soal">
+      <a class="nav-link" data-bs-toggle="collapse" href="#soal" aria-expanded="{{ is_active_route(['soal']) }}" aria-controls="soal">
         <i class="menu-icon mdi mdi-format-list-numbered"></i>
         <span class="menu-title">Soal</span>
         <i class="menu-arrow"></i> 
