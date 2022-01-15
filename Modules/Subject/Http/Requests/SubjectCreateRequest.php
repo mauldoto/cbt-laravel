@@ -14,8 +14,8 @@ class SubjectCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'subject_code'  => 'required|string|max:10',
-            'subject_name'  => 'required|string|max:20',  
+            'subject_code'  => 'required|string|unique:subjects,subject_code|max:10',
+            'subject_name'  => 'required|string|unique:subjects,subject_name|max:20',  
         ];
     }
 

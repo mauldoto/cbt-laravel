@@ -17,7 +17,7 @@ class CreateSubjectsTable extends Migration
             $table->id();
             // $table->uuid('uuid_subject')->index();
             $table->string('subject_code')->unique();
-            $table->string('subject_name');
+            $table->string('subject_name')->unique();
             $table->timestamps();
         });
     }
