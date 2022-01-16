@@ -14,3 +14,9 @@
 Route::prefix('user')->group(function() {
     Route::get('/', 'UserController@index');
 });
+
+Route::prefix('guru')->middleware(['web', 'auth'])->group(function() {
+    Route::get('list', 'TeacherController@index');
+    Route::get('create', 'TeacherController@create');
+    Route::get('edit', 'TeacherController@edit');
+});
