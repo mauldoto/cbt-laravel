@@ -45,3 +45,10 @@ if(!function_exists('generateUUID')){
 		);
 	}
 }
+
+// For generate 10 random text
+if(!function_exists('generateCode')) {
+  function generateCode($path) {
+    return bin2hex(random_bytes(10));
+  }
+}
