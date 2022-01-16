@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 use Modules\Subject\Http\Requests\SubjectCreateRequest;
+use Modules\Subject\Http\Requests\SubjectEditRequest;
 use App\Models\Subject;
 
 class SubjectController extends Controller
@@ -17,7 +18,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $dataSubjects = Subject::select('subject_code', 'subject_name')->get();
+        $dataSubjects = Subject::select('subject_code', 'subject_name', 'id')->get();
         return view('subject::index', compact('dataSubjects'));
     }
 
@@ -39,12 +40,11 @@ class SubjectController extends Controller
     {
         $dataInput = $request->only(['subject_code', 'subject_name']);
 
-        if (Subject::checkCodeIsExist($request->subject_code)) {
+        if (Subject::checkDataIsExists($dataInput)) {
             return back()
                     ->withErrors(['subject_code' => 'Kode mata pelajaran sudah digunakan, mohon gunakan kode yang lain.'])
                     ->withInput();
         }
-
         
         $createSubject = Subject::create($dataInput);
         if (!$createSubject) {
@@ -71,9 +71,9 @@ class SubjectController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function edit($id)
+    public function edit(Subject $subject)
     {
-        return view('subject::edit');
+        return view('subject::edit', compact('subject'));
     }
 
     /**
@@ -82,9 +82,28 @@ class SubjectController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function update(SubjectEditRequest $request, Subject $subject)
     {
-        //
+        $dataInput = $request->only(['subject_code', 'subject_name']);
+
+        if (Subject::checkDataIsExists($dataInput, $subject->id)) {
+            return back()
+                    ->withErrors(['subject_code' => 'Kode mata pelajaran sudah digunakan, mohon gunakan kode yang lain.'])
+                    ->withInput();
+        }
+        
+        $subject->update([
+            'subject_code' => $dataInput['subject_code'],
+            'subject_name' => $dataInput['subject_name']
+        ]);
+
+        if (!$subject) {
+            return back()
+                    ->withErrors(['Proses edit data mata pelajaran gagal, silakan ulangi kembali.'])
+                    ->withInput();
+        }
+
+        return redirect('mapel/list')->withSuccess(['Data mata pelajaran berhasil diedit.']);
     }
 
     /**
@@ -92,8 +111,13 @@ class SubjectController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function destroy($id)
+    public function destroy(Subject $subject)
     {
-        //
+        $subject->delete();
+        if (!$subject) {
+            return back()->withErrors(['Proses hapus data mata pelajaran gagal, silakan ulangi kembali.']);
+        }
+
+        return back()->withSuccess(['Data mata pelajaran berhasil dihapus.']);
     }
 }
