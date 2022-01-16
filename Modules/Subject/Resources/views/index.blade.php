@@ -41,12 +41,13 @@
                           <i class="ti-menu-alt"></i>
                           </button>
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton1">
-                          <h6 class="dropdown-header">Settings</h6>
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Something else here</a>
+                          {{-- <h6 class="dropdown-header">Action</h6> --}}
+                          <a class="dropdown-item" href="{{ url('mapel/edit/'.$subject->id) }}">Edit</a>
                           <div class="dropdown-divider"></div>
-                          <a class="dropdown-item text-danger" href="#">Separated link</a>
+                          <form action="{{ url('mapel/delete', $subject->id) }}" method="POST">
+                            @csrf
+                            <button class="dropdown-item text-danger">Delete</button>
+                          </form>
                           </div>
                       </div>
                   </td>

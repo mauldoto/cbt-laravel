@@ -14,5 +14,10 @@
 Route::prefix('mapel')->middleware(['web', 'auth'])->group(function() {
     Route::get('list', 'SubjectController@index');
     Route::get('create', 'SubjectController@create');
+    Route::get('edit/{subject}', 'SubjectController@edit');
+
+    // post route
     Route::post('store', 'SubjectController@store');
+    Route::post('update/{subject}', 'SubjectController@update');
+    Route::post('delete/{subject}', 'SubjectController@destroy');
 });
