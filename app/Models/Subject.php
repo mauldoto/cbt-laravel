@@ -14,8 +14,17 @@ class Subject extends Model
         'subject_name'
     ];
 
-    public static function checkCodeIsExist($code, $isUpdate = false)
+    public static function checkDataIsExists($data, $id = null)
     {
-        return Self::where('subject_code', $code)->exists();
+        $checkExists = Self::where('subject_code', $data['subject_code'])
+            ->where(function ($query) use ($data) {
+                $query->orWhere('subject_name', $data['subject_name'])->limit(1);
+            });
+
+        if ($id) {
+            $checkExists = $checkExists->where('id', '!=', $id);
+        }
+
+        return $checkExists->exists(); 
     }
 }
