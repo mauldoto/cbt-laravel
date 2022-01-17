@@ -11,6 +11,20 @@
           </div> --}}
           <h4>Hello! let's get started</h4>
           <h6 class="fw-light">Sign in to continue.</h6>
+
+          {{-- error information --}}
+          @if (Session::has('errors'))
+          <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+            <strong>Error!</strong>
+              @foreach($errors->all() as $error)
+              <br>- {!! $error !!}
+              @endforeach
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          @endif
+          {{-- end error information --}}
+
+
           <form class="pt-3" method="POST" action="{{ url('login') }}">
             @csrf
             <div class="form-group">

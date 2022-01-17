@@ -24,7 +24,7 @@ class LoginController extends Controller
             return redirect()->intended('/');
         }
 
-        return back()->withErrors(['Username atau password tidak ditemukan.']);
+        return back()->withErrors('Username atau password tidak ditemukan.');
     }
 
     public function logout(Request $request)
