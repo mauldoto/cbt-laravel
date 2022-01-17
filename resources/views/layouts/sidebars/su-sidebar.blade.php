@@ -69,8 +69,8 @@
           <li class="nav-item {{ active_class(['guru/list']) }}"> 
             <a class="nav-link nav-link-sub {{ active_class(['guru/list']) }}" href="{{ url('guru/list') }}">List</a>
           </li>
-          <li class="nav-item {{ active_class(['teacher/create']) }}"> 
-            <a class="nav-link nav-link-sub {{ active_class(['teacher/create']) }}" href="{{ url('guru/create') }}">Create</a>
+          <li class="nav-item {{ active_class(['guru/create']) }}"> 
+            <a class="nav-link nav-link-sub {{ active_class(['guru/create']) }}" href="{{ url('guru/create') }}">Create</a>
           </li>
         </ul>
       </div>
