@@ -17,7 +17,7 @@
         @csrf
         <div class="form-group">
           <label for="teacherName">Nama Guru</label>
-          <input type="text" class="form-control" id="teacherName" name="subject_code" placeholder="Nama Guru">
+          <input type="text" class="form-control" id="teacherName" name="teacher_name" placeholder="Nama Guru">
         </div>
         <div class="form-group">
           <label for="teacherSubject">Mata Pelajaran</label>
@@ -26,16 +26,16 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="subjectName">Username</label>
-          <input type="text" class="form-control" id="subjectName" name="subject_name" placeholder="Username">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Username">
         </div>
         <div class="form-group">
-          <label for="subjectName">Password</label>
-          <input type="password" class="form-control" id="subjectName" name="password" placeholder="Password">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
         </div>
         <div class="form-group">
-          <label for="subjectName">Ulangi Password</label>
-          <input type="password" class="form-control" id="subjectName" name="password_confirm" placeholder="Ulangi Password">
+          <label for="password_confirm">Ulangi Password</label>
+          <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Ulangi Password">
         </div>
         <button type="submit" class="btn btn-primary me-2">Submit</button>
       </form>
