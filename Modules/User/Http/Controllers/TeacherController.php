@@ -33,7 +33,7 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $dataInput = $request->only(['nama']);
     }
 
     /**
