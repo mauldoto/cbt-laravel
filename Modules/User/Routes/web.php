@@ -19,4 +19,8 @@ Route::prefix('guru')->middleware(['web', 'auth'])->group(function() {
     Route::get('list', 'TeacherController@index');
     Route::get('create', 'TeacherController@create');
     Route::get('edit', 'TeacherController@edit');
+
+    Route::post('store', 'TeacherController@store');
+    Route::post('update', 'TeacherController@update');
+    Route::post('delete', 'TeacherController@destroy');
 });
