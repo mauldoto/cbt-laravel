@@ -1,3 +1,4 @@
+
 @extends('main')
 
 @push('additional-plugin-css')
@@ -9,19 +10,19 @@
 <div class="col-md-6 grid-margin stretch-card">
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Tambah Data Guru</h4>
+      <h4 class="card-title"> Edit Data  Guru</h4>
       <p class="card-description">
-        Form untuk menambah data guru
+        Form untuk merubah data guru
       </p>
       <form action="{{ url('guru/store') }}" method="POST">
         @csrf
         <div class="form-group">
           <label for="teacherName">Nama Guru</label>
-          <input type="text" class="form-control" id="teacherName" name="teacher_name" placeholder="Nama Guru">
+          <input type="text" class="form-control" id="teacherName" name="teacher_name" placeholder="Nama Guru" value="{{ $teacher->name }}">
         </div>
         <div class="form-group">
           <label for="teacherEmail">Email</label>
-          <input type="email" class="form-control" id="teacherEmail" name="email" placeholder="Email">
+          <input type="email" class="form-control" id="teacherEmail" name="email" placeholder="Email" value="{{ $teacher->email }}">
         </div>
         <div class="form-group">
           <label for="teacherSubject">Mata Pelajaran</label>
@@ -31,11 +32,11 @@
         </div>
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+          <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="{{ $teacher->username }}">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="{{ $teacher->password }}">
         </div>
         <div class="form-group">
           <label for="password_confirm">Ulangi Password</label>
