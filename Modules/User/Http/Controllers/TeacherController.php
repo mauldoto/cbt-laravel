@@ -6,6 +6,9 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 class TeacherController extends Controller
 {
     /**
@@ -14,7 +17,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        return view('user::teacher.index');
+        $teachers = User::where('user_type', 'teacher')->get();
+        return view('user::teacher.index', compact('teachers'));
     }
 
     /**
@@ -33,7 +37,20 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-       $dataInput = $request->only(['nama']);
+        $dataInput = $request->only(['teacher_name', 'username', 'password', 'mapel', 'email']);
+
+        $addNewTeacher = User::create([
+            'username' => $dataInput['username'],
+            'name'     => $dataInput['teacher_name'],
+            'email'    => $dataInput['email'],
+            'password' => Hash::make($dataInput['password']),
+        ]);
+
+        if (!$addNewTeacher) {
+            return back()->withErrors('Proses menambahkan data guru gagal, silakan ulangi kembali!.');
+        }
+
+        return redirect('guru/list')->withSuccess('Proses menambahkan data guru berhasil');
     }
 
     /**
