@@ -13,7 +13,7 @@
             <thead>
               <tr>
                 <th>#No</th>
-                <th>Nama Guru</th>
+                <th>Nama Siswa</th>
                 <th>Username</th>
                 <th>Email</th>
                 <th>Actions</th>
@@ -23,12 +23,12 @@
               @php
                   $number = 0;
               @endphp
-              @foreach ($teachers as $teacher)
+              @foreach ($students as $student)
                   <tr>
                     <td>{{ ++$number }}</td>
-                    <td>{{ $teacher->name }}</td>
-                    <td>{{ $teacher->username }}</td>
-                    <td>{{ $teacher->email }}</td>
+                    <td>{{ $student->name }}</td>
+                    <td>{{ $student->username }}</td>
+                    <td>{{ $student->email }}</td>
                     <td>
                       <div class="dropdown">
                           <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuIconButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -36,9 +36,9 @@
                           </button>
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton1">
                           {{-- <h6 class="dropdown-header">Action</h6> --}}
-                          <a class="dropdown-item" href="{{ url('guru/edit/'.$teacher->id) }}">Edit</a>
+                          <a class="dropdown-item" href="{{ url('siswa/edit/'.$student->id) }}">Edit</a>
                           <div class="dropdown-divider"></div>
-                          <form action="{{ url('guru/delete', $teacher->id) }}" method="POST">
+                          <form action="{{ url('siswa/delete', $student->id) }}" method="POST">
                             @csrf
                             <button class="dropdown-item text-danger">Delete</button>
                           </form>
