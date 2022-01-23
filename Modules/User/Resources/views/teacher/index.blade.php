@@ -36,9 +36,9 @@
                           </button>
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton1">
                           {{-- <h6 class="dropdown-header">Action</h6> --}}
-                          <a class="dropdown-item" href="{{ url('mapel/edit/'.$teacher->id) }}">Edit</a>
+                          <a class="dropdown-item" href="{{ url('guru/edit/'.$teacher->id) }}">Edit</a>
                           <div class="dropdown-divider"></div>
-                          <form action="{{ url('mapel/delete', $teacher->id) }}" method="POST">
+                          <form action="{{ url('guru/delete', $teacher->id) }}" method="POST">
                             @csrf
                             <button class="dropdown-item text-danger">Delete</button>
                           </form>
