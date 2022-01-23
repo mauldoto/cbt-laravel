@@ -17,11 +17,11 @@
         @csrf
         <div class="form-group">
           <label for="studentName">Nama Siswa</label>
-          <input type="text" class="form-control" id="studentName" name="teacher_name" placeholder="Nama siswa">
+          <input type="text" class="form-control" id="studentName" name="teacher_name" placeholder="Nama Siswa" value="{{ $student->name }}">
         </div>
         <div class="form-group">
           <label for="studentEmail">Email</label>
-          <input type="email" class="form-control" id="studentEmail" name="email" placeholder="Email">
+          <input type="email" class="form-control" id="studentEmail" name="email" placeholder="Email" value="{{ $student->email }}">
         </div>
         <div class="form-group">
           <label for="teacherSubject">Kelas</label>
@@ -31,7 +31,7 @@
         </div>
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+          <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="{{ $student->username }}">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
