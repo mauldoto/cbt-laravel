@@ -72,7 +72,7 @@ class StudentController extends Controller
     public function edit(User $user)
     {   
         $student = $user;
-        return view('user::student.edit');
+        return view('user::student.edit', compact('student'));
     }
 
     /**

@@ -71,7 +71,8 @@ class TeacherController extends Controller
      */
     public function edit(User $user)
     {
-        return view('user::teacher.edit');
+        $teacher = $user;
+        return view('user::teacher.edit', compact('teacher'));
     }
 
     /**
