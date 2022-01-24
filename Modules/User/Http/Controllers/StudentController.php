@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-class TeacherController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teachers = User::where('user_type', 'teacher')->get();
-        return view('user::teacher.index', compact('teachers'));
+        $teachers = User::where('user_type', 'student')->get();
+        return view('user::student.index', compact('teachers'));
     }
 
     /**
@@ -27,7 +27,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return view('user::teacher.create');
+        return view('user::student.create');
     }
 
     /**
@@ -37,21 +37,21 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        $dataInput = $request->only(['teacher_name', 'username', 'password', 'mapel', 'email']);
+        $dataInput = $request->only(['student_name', 'username', 'password', 'mapel', 'email']);
 
         $addNewTeacher = User::create([
             'username' => $dataInput['username'],
-            'name'     => $dataInput['teacher_name'],
+            'name'     => $dataInput['student_name'],
             'email'    => $dataInput['email'],
             'password' => Hash::make($dataInput['password']),
-            'user_type' => 'teacher',
+            'user_type' => 'student',
         ]);
 
         if (!$addNewTeacher) {
-            return back()->withErrors('Proses menambahkan data guru gagal, silakan ulangi kembali!.');
+            return back()->withErrors('Proses menambahkan data siswa gagal, silakan ulangi kembali!.');
         }
 
-        return redirect('guru/list')->withSuccess('Proses menambahkan data guru berhasil');
+        return redirect('siswa/list')->withSuccess('Proses menambahkan data siswa berhasil');
     }
 
     /**
@@ -61,7 +61,7 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-        return view('user::teacher.show');
+        return view('user::student.show');
     }
 
     /**
@@ -71,7 +71,7 @@ class TeacherController extends Controller
      */
     public function edit($id)
     {
-        return view('user::teacher.edit');
+        return view('user::student.edit');
     }
 
     /**
