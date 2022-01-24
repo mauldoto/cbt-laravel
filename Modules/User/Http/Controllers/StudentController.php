@@ -39,7 +39,7 @@ class StudentController extends Controller
     {
         $dataInput = $request->only(['student_name', 'username', 'password', 'mapel', 'email']);
 
-        $addNewTeacher = User::create([
+        $addNewStudent = User::create([
             'username' => $dataInput['username'],
             'name'     => $dataInput['student_name'],
             'email'    => $dataInput['email'],
@@ -47,7 +47,7 @@ class StudentController extends Controller
             'user_type' => 'student',
         ]);
 
-        if (!$addNewTeacher) {
+        if (!$addNewStudent) {
             return back()->withErrors('Proses menambahkan data siswa gagal, silakan ulangi kembali!.');
         }
 
@@ -69,8 +69,9 @@ class StudentController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function edit($id)
-    {
+    public function edit(User $user)
+    {   
+        $student = $user;
         return view('user::student.edit');
     }
 
@@ -80,9 +81,23 @@ class StudentController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $dataInput = $request->only(['student_name', 'username', 'password', 'mapel', 'email']);
+
+        $updateStudent = $user->update([
+            'username' => $dataInput['username'],
+            'name'     => $dataInput['student_name'],
+            'email'    => $dataInput['email'],
+            'password' => Hash::make($dataInput['password']),
+            'user_type' => 'student',
+        ]);
+
+        if (!$updateStudent) {
+            return back()->withErrors('Proses merubah data siswa gagal, silakan ulangi kembali!.');
+        }
+
+        return redirect('siswa/list')->withSuccess('Proses merubah data siswa berhasil');
     }
 
     /**
@@ -90,8 +105,12 @@ class StudentController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        if (!$user->delete()) {
+            return back()->withErrors('Proses hapus data siswa gagal, silakan ulangi kembali.');
+        }
+
+        return back()->withErrors('Proses hapus data siswa berhasil.');
     }
 }
