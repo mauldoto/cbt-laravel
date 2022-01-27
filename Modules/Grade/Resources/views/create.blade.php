@@ -8,7 +8,7 @@
       <p class="card-description">
         Form untuk menambah data kelas
       </p>
-      <form action="{{ url('grade/store') }}" method="POST">
+      <form action="{{ url('kelas/store') }}" method="POST">
         @csrf
         <div class="form-group">
           <label for="gradeName">Nama Kelas</label>

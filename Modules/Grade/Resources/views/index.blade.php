@@ -12,29 +12,21 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>
-                  #No
-                </th>
-                <th>
-                  Kode Mapel
-                </th>
-                <th>
-                  Nama Mapel
-                </th>
-                <th>
-                  Actions
-                </th>
+                <th>#No</th>
+                <th>Kode Kelas</th>
+                <th>Nama Kelas</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               @php
                   $number = 0;
               @endphp
-              @foreach ($dataSubjects as $subject)
+              @foreach ($dataGrades as $grade)
                   <tr>
                     <td>{{ ++$number }}</td>
-                    <td>{{ $subject->subject_code }}</td>
-                    <td>{{ $subject->subject_name }}</td>
+                    <td>{{ $grade->grade_code }}</td>
+                    <td>{{ $grade->grade_name }}</td>
                     <td>
                       <div class="dropdown">
                           <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuIconButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,9 +34,9 @@
                           </button>
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton1">
                           {{-- <h6 class="dropdown-header">Action</h6> --}}
-                          <a class="dropdown-item" href="{{ url('mapel/edit/'.$subject->id) }}">Edit</a>
+                          <a class="dropdown-item" href="{{ url('kelas/edit', $grade->id) }}">Edit</a>
                           <div class="dropdown-divider"></div>
-                          <form action="{{ url('mapel/delete', $subject->id) }}" method="POST">
+                          <form action="{{ url('kelas/delete', $grade->id) }}" method="POST">
                             @csrf
                             <button class="dropdown-item text-danger">Delete</button>
                           </form>
