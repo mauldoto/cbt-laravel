@@ -6,6 +6,8 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
+use App\Models\Grade;
+
 class GradeController extends Controller
 {
     /**
@@ -14,7 +16,8 @@ class GradeController extends Controller
      */
     public function index()
     {
-        return view('grade::index');
+        $dataGrades = Grade::orderBy('created_at')->get();
+        return view('grade::index', compact('dataGrades'));
     }
 
     /**
@@ -33,7 +36,20 @@ class GradeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataInput = $request->only(['grade_name']);
+        
+        $createGrade = Grade::create([
+            'grade_code' => strtolower($dataInput['grade_name']),
+            'grade_name' => $dataInput['grade_name']
+        ]);
+
+        if (!$createGrade) {
+            return back()
+                    ->withErrors(['Proses tambah data kelas gagal, silakan ulangi kembali.'])
+                    ->withInput();
+        }
+
+        return redirect('kelas/list')->withSuccess(['Data kelas berhasil ditambahkan.']);
     }
 
     /**
@@ -51,9 +67,9 @@ class GradeController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function edit($id)
+    public function edit(Grade $grade)
     {
-        return view('grade::edit');
+        return view('grade::edit', compact('grade'));
     }
 
     /**
@@ -62,9 +78,22 @@ class GradeController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Grade $grade)
     {
-        //
+        $dataInput = $request->only(['grade_name']);
+        
+        $updateGrade = $grade->update([
+            'grade_code' => strtolower($dataInput['grade_name']),
+            'grade_name' => $dataInput['grade_name']
+        ]);
+
+        if (!$updateGrade) {
+            return back()
+                    ->withErrors(['Proses edit data kelas gagal, silakan ulangi kembali.'])
+                    ->withInput();
+        }
+
+        return redirect('kelas/list')->withSuccess(['Data kelas berhasil diedit.']);
     }
 
     /**
@@ -72,7 +101,7 @@ class GradeController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function destroy($id)
+    public function destroy(Grade $grade)
     {
         //
     }
