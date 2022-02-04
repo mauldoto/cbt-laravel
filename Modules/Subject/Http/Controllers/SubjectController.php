@@ -85,12 +85,6 @@ class SubjectController extends Controller
     public function update(SubjectEditRequest $request, Subject $subject)
     {
         $dataInput = $request->only(['subject_code', 'subject_name']);
-
-        if (Subject::checkDataIsExists($dataInput, $subject->id)) {
-            return back()
-                    ->withErrors(['subject_code' => 'Kode mata pelajaran sudah digunakan, mohon gunakan kode yang lain.'])
-                    ->withInput();
-        }
         
         $subject->update([
             'subject_code' => $dataInput['subject_code'],
