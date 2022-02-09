@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-class TeacherController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teachers = User::where('user_type', 'teacher')->get();
-        return view('user::teacher.index', compact('teachers'));
+        $teachers = User::where('user_type', 'student')->get();
+        return view('user::student.index', compact('teachers'));
     }
 
     /**
@@ -27,7 +27,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return view('user::teacher.create');
+        return view('user::student.create');
     }
 
     /**
@@ -37,21 +37,21 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        $dataInput = $request->only(['teacher_name', 'username', 'password', 'mapel', 'email']);
+        $dataInput = $request->only(['student_name', 'username', 'password', 'mapel', 'email']);
 
-        $addNewTeacher = User::create([
+        $addNewStudent = User::create([
             'username' => $dataInput['username'],
-            'name'     => $dataInput['teacher_name'],
+            'name'     => $dataInput['student_name'],
             'email'    => $dataInput['email'],
             'password' => Hash::make($dataInput['password']),
-            'user_type' => 'teacher',
+            'user_type' => 'student',
         ]);
 
-        if (!$addNewTeacher) {
-            return back()->withErrors('Proses menambahkan data guru gagal, silakan ulangi kembali!.');
+        if (!$addNewStudent) {
+            return back()->withErrors('Proses menambahkan data siswa gagal, silakan ulangi kembali!.');
         }
 
-        return redirect('guru/list')->withSuccess('Proses menambahkan data guru berhasil');
+        return redirect('siswa/list')->withSuccess('Proses menambahkan data siswa berhasil');
     }
 
     /**
@@ -61,7 +61,7 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-        return view('user::teacher.show');
+        return view('user::student.show');
     }
 
     /**
@@ -70,9 +70,9 @@ class TeacherController extends Controller
      * @return Renderable
      */
     public function edit(User $user)
-    {
-        $teacher = $user;
-        return view('user::teacher.edit', compact('teacher'));
+    {   
+        $student = $user;
+        return view('user::student.edit', compact('student'));
     }
 
     /**
@@ -83,21 +83,21 @@ class TeacherController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $dataInput = $request->only(['teacher_name', 'username', 'password', 'mapel', 'email']);
+        $dataInput = $request->only(['student_name', 'username', 'password', 'mapel', 'email']);
 
-        $addNewTeacher = $user->update([
+        $updateStudent = $user->update([
             'username' => $dataInput['username'],
-            'name'     => $dataInput['teacher_name'],
+            'name'     => $dataInput['student_name'],
             'email'    => $dataInput['email'],
             'password' => Hash::make($dataInput['password']),
-            'user_type' => 'teacher',
+            'user_type' => 'student',
         ]);
 
-        if (!$addNewTeacher) {
-            return back()->withErrors('Proses merubah data guru gagal, silakan ulangi kembali!.');
+        if (!$updateStudent) {
+            return back()->withErrors('Proses merubah data siswa gagal, silakan ulangi kembali!.');
         }
 
-        return redirect('guru/list')->withSuccess('Proses merubah data guru berhasil');
+        return redirect('siswa/list')->withSuccess('Proses merubah data siswa berhasil');
     }
 
     /**
@@ -108,9 +108,9 @@ class TeacherController extends Controller
     public function destroy(User $user)
     {
         if (!$user->delete()) {
-            return back()->withErrors('Proses hapus data guru gagal, silakan ulangi kembali.');
+            return back()->withErrors('Proses hapus data siswa gagal, silakan ulangi kembali.');
         }
 
-        return back()->withErrors('Proses hapus data guru berhasil.');
+        return back()->withErrors('Proses hapus data siswa berhasil.');
     }
 }

@@ -15,11 +15,11 @@ class CreateGradeStudentsTable extends Migration
     {
         Schema::create('grade_students', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('id_grade');
+            $table->unsignedBigInteger('id_grade');
             $table->unsignedBigInteger('id_student');
             $table->timestamps();
 
-            // $table->foreign('id_grade')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('id_grade')->references('id')->on('grades')->onDelete('cascade');
             $table->foreign('id_student')->references('id')->on('users')->onDelete('cascade');
         });
     }
